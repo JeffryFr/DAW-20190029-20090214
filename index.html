@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pedidos KFC</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <form>
+            <div class="contenedor_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Combos</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label for="combos3">Súper Combo</label></td>
+                            <td><input id="combos3" type="radio" name="combos" value="3" onchange="elegido(this.value)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="combos2">Combo Personal</label></td>
+                            <td><input id="combos2" type="radio" name="combos" value="2" onchange="elegido(this.value)"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="combos1">Combo Infantil</label></td>
+                            <td><input id="combos1" type="radio" name="combos" value="1" onchange="elegido(this.value)"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><textarea name="descripcion" id="descripcion" cols="35" rows="2" disabled="true"></textarea></td>
+                        </tr>
+                        <tr id="cantidadCombo"></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="contenedor_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="2">Producto</th>
+                            <th></th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e1"></td>
+                            <td colspan="2">Ensalada</td>
+                            <td><img src="media/ensalada.jpg" alt="Ensalada"></td>
+                            <td>$1.50</td>
+                            <td id="cant1"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e2"></td>
+                            <td colspan="2">Papas Fritas</td>
+                            <td><img src="media/papas.jpg" alt="Papas fritas"></td>
+                            <td>$1.25</td>
+                            <td id="cant2"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e3"></td>
+                            <td colspan="2">Pieza de pollo grande</td>
+                            <td><img src="media/pollo1.jpg" alt="Pollo"></td>
+                            <td>$1.75</td>
+                            <td id="cant3"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e4"></td>
+                            <td colspan="2">Pieza de pollo mediana</td>
+                            <td><img src="media/pollo1.jpg" alt="Pollo"></td>
+                            <td>$1.50</td>
+                            <td id="cant4"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e5"></td>
+                            <td colspan="2">Pieza de pollo pequeña</td>
+                            <td><img src="media/pollo1.jpg" alt="Pollo"></td>
+                            <td>$1.25</td>
+                            <td id="cant5"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e6"></td>
+                            <td colspan="2">Bebida grande</td>
+                            <td><img src="media/bebida1.jpg" alt="Bebida"></td>
+                            <td>$1.50</td>
+                            <td id="cant6"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e7"></td>
+                            <td colspan="2">Bebida mediana</td>
+                            <td><img src="media/bebida1.jpg" alt="Bebida"></td>
+                            <td>$1.25</td>
+                            <td id="cant7"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e8"></td>
+                            <td colspan="2">Bebida pequeña</td>
+                            <td><img src="media/bebida1.jpg" alt="Bebida"></td>
+                            <td>$1.00</td>
+                            <td id="cant8"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e9"></td>
+                            <td colspan="2">Café</td>
+                            <td><img src="media/cafe.jpg" alt="Café"></td>
+                            <td>$0.50</td>
+                            <td id="cant9"></td>
+                        </tr>
+        
+                        <tr>
+                            <td><input type="checkbox" onchange="ordenarProducto(this.id)" class="check" id="e10"></td>
+                            <td colspan="2">Postre</td>
+                            <td><img src="media/postre.jpg" alt="Postre"></td>
+                            <td>$1.25</td>
+                            <td id="cant10"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div id="comen">
+                <textarea name="area" id="area" cols="40" rows="5" disabled="true"></textarea>
+            </div>
+        </form>
+        <div id="factura">
+            <h1>Total a pagar</h1>
+            <table id="ordenTabla">
+                <thead>
+                    <tr>
+                        <td colspan="2">Producto y cantidad</td>
+                        <td>Valor ($)</td>
+                    </tr>
+                </thead>
+                <tbody id="orden"></tbody>
+            </table>
+            <div id="comenFactura"></div><br><br>
+            <span id="final">Total a pagar: $0.00</span>
+        </div>
+    </body>
+</html>
